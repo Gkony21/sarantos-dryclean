@@ -1,5 +1,7 @@
-import { MapPin, MessageCircle, Phone, Truck } from "lucide-react";
+import { MapPin, Truck } from "lucide-react";
 import { site } from "@/lib/site";
+import CallButton from "@/components/CallButton";
+import ViberButton from "@/components/ViberButton";
 
 export default function Hero() {
   return (
@@ -19,20 +21,8 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a
-            href={`tel:${site.mobile.tel}`}
-            className="flex items-center justify-center gap-2 rounded-md bg-brand-green px-6 py-4 text-lg font-bold text-white"
-          >
-            <Phone className="h-5 w-5" />
-            Καλέστε: {site.mobile.display}
-          </a>
-          <a
-            href={site.viber}
-            className="flex items-center justify-center gap-2 rounded-md border-2 border-brand-green bg-white px-6 py-4 text-lg font-bold text-brand-green"
-          >
-            <MessageCircle className="h-5 w-5" />
-            Μήνυμα στο Viber
-          </a>
+          <CallButton size="lg" label={`Καλέστε: ${site.mobile.display}`} />
+          <ViberButton size="lg" label="Μήνυμα στο Viber" />
         </div>
 
         <p className="flex items-center gap-2">

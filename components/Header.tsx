@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { MessageCircle, Phone } from "lucide-react";
-import { site } from "@/lib/site";
+import CallButton from "@/components/CallButton";
+import ViberButton from "@/components/ViberButton";
 
 export default function Header() {
   return (
@@ -16,21 +16,8 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-2">
-          <a
-            href={site.viber}
-            aria-label="Στείλτε μήνυμα στο Viber"
-            className="flex items-center gap-2 rounded-md border-2 border-brand-green px-3 py-2 font-bold text-brand-green"
-          >
-            <MessageCircle className="h-5 w-5" />
-            <span className="hidden sm:inline">Viber</span>
-          </a>
-          <a
-            href={`tel:${site.mobile.tel}`}
-            className="flex items-center gap-2 rounded-md bg-brand-green px-3 py-2 font-bold text-white"
-          >
-            <Phone className="h-5 w-5" />
-            <span>{site.mobile.display}</span>
-          </a>
+          <ViberButton compact />
+          <CallButton />
         </div>
       </div>
     </header>
