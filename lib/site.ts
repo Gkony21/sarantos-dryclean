@@ -8,4 +8,9 @@ export const site = {
   viber: "viber://chat?number=%2B306932238223",
   facebook: "https://www.facebook.com/SARANTOSPSYHOGIOS",
   instagram: "https://www.instagram.com/sarantos13/",
+  offer: {
+    active: true,
+    title: "2 ρούχα + 1 δώρο",
+    text: "Με τον καθαρισμό 2 ρούχων, 1 δώρο!",
+  },
 } as const;
