@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Commissioner } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const commissioner = Commissioner({
   subsets: ["latin", "greek"],
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="bg-white font-sans text-brand-ink antialiased">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
