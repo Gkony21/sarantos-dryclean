@@ -8,9 +8,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center gap-2 leading-tight">
-          <Image src="/logo.svg" alt="" width={40} height={40} />
+          <Image
+            src="/logo.svg"
+            alt=""
+            width={40}
+            height={40}
+            className="h-8 w-8 sm:h-10 sm:w-10"
+          />
           <span>
-            <span className="block text-xl font-extrabold text-brand-lime">
+            <span className="block text-lg font-extrabold text-brand-lime sm:text-xl">
               ΣΑΡΑΝΤΟΣ
             </span>
             <span className="block text-sm font-bold text-brand-blue">

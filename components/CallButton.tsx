@@ -17,7 +17,7 @@ export default function CallButton({
       className={`flex items-center justify-center gap-2 rounded-md bg-brand-green font-bold text-white ${buttonSizes[size]}`}
     >
       <Phone className="h-5 w-5 shrink-0" />
-      <span>{label}</span>
+      <span className="whitespace-nowrap">{label}</span>
     </a>
   );
 }
