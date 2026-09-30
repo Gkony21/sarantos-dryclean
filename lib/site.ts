@@ -17,7 +17,7 @@ export const site = {
   facebook: "https://www.facebook.com/SARANTOSPSYHOGIOS",
   instagram: "https://www.instagram.com/sarantos13/",
   offer: {
-    active: true,
+    active: false,
     title: "2 ρούχα + 1 δώρο",
     text: "Με τον καθαρισμό 2 ρούχων, 1 δώρο!",
   },

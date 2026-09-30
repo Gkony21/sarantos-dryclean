@@ -16,7 +16,7 @@ export default function Header() {
             className="h-8 w-8 sm:h-10 sm:w-10"
           />
           <span>
-            <span className="block text-lg font-extrabold text-brand-lime sm:text-xl">
+            <span className="block text-lg font-extrabold text-brand-green sm:text-xl">
               ΣΑΡΑΝΤΟΣ
             </span>
             <span className="block text-sm font-bold text-brand-blue">
