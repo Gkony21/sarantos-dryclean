@@ -3,6 +3,7 @@ import { Commissioner } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { site } from "@/lib/site";
 
 const commissioner = Commissioner({
   subsets: ["latin", "greek"],
@@ -10,9 +11,18 @@ const commissioner = Commissioner({
 });
 
 export const metadata: Metadata = {
-  title: "Σαράντος Dry Clean | Ταπητοκαθαριστήριο & Πλυντήριο στη Σπάρτη",
-  description:
-    "Καθαρισμός χαλιών, ρούχων, παπλωμάτων και σαλονιών στη Σπάρτη. 25 χρόνια εμπειρία, δωρεάν παραλαβή και παράδοση.",
+  metadataBase: new URL(site.url),
+  title: site.title,
+  description: site.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "el_GR",
+    url: "/",
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+  },
 };
 
 export default function RootLayout({

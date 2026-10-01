@@ -1,8 +1,18 @@
-const address = "Λεωνίδου 82, Σπάρτη 23100";
+const addressParts = {
+  street: "Λεωνίδου 82",
+  city: "Σπάρτη",
+  postalCode: "23100",
+};
+const address = `${addressParts.street}, ${addressParts.city} ${addressParts.postalCode}`;
 export const site = {
+  url: "https://sarantos-dryclean.gr",
+  title: "Σαράντος Dry Clean | Ταπητοκαθαριστήριο & Πλυντήριο στη Σπάρτη",
+  description:
+    "Καθαρισμός χαλιών, ρούχων, παπλωμάτων και σαλονιών στη Σπάρτη. 25 χρόνια εμπειρία, δωρεάν παραλαβή και παράδοση.",
   name: "Σαράντος Dry Clean",
   owner: "Σαράντος Ψυχογιός",
   address,
+  addressParts,
   mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`,
   hours: [
     { days: "Δευτέρα & Τετάρτη", time: "08:00–14:00" },
