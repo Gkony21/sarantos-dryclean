@@ -16,7 +16,7 @@ export const site = {
   mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`,
   hours: [
     { days: "Δευτέρα & Τετάρτη", time: "08:00–14:00" },
-    { days: "Τρίτη, Πέμπτη & Παρασκευή", time: "08:00–14:00 & 18:00–21:00" },
+    { days: "Τρίτη, Πέμπτη & Παρασκευή", time: "08:00–14:00 & 17:30–20:30" },
     { days: "Σάββατο", time: "08:00–14:00" },
     { days: "Κυριακή", time: "Κλειστά" },
   ],
