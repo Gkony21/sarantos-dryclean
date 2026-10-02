@@ -1,10 +1,13 @@
 import {
   BedDouble,
+  Blinds,
   Car,
   Layers,
   Scissors,
   Shirt,
   Sofa,
+  Sparkles,
+  Wind,
   type LucideIcon,
 } from "lucide-react";
 
@@ -34,6 +37,22 @@ export const services: Service[] = [
     title: "Παπλώματα, κουβέρτες & στρώματα",
     description: "Καθαρισμός για παπλώματα, κουβέρτες και στρώματα ύπνου.",
     icon: BedDouble,
+  },
+  {
+    title: "Σιδέρωμα",
+    description:
+      "Επαγγελματικό σιδέρωμα για πουκάμισα, παντελόνια και λευκά είδη.",
+    icon: Wind,
+  },
+  {
+    title: "Νυφικά",
+    description: "Προσεκτικός καθαρισμός και φρεσκάρισμα νυφικών.",
+    icon: Sparkles,
+  },
+  {
+    title: "Κουρτίνες",
+    description: "Πλύσιμο και φρεσκάρισμα κουρτινών.",
+    icon: Blinds,
   },
   {
     title: "Σαλόνια",
