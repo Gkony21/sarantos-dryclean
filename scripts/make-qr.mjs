@@ -4,7 +4,7 @@ import sharp from "sharp";
 
 const targets = [
   { name: "qr-site", url: "https://sarantos-dryclean.gr" },
-  // { name: "qr-reviews", url: "ΕΔΩ_ΤΟ_LINK_ΤΩΝ_REVIEWS" },
+  { name: "qr-reviews", url: "https://g.page/r/CR1lANgYa4FsEBM/review" },
 ];
 
 const logo = fs.readFileSync("public/logo.svg");
