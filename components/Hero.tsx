@@ -1,5 +1,4 @@
 import { MapPin, Truck } from "lucide-react";
-import Image from "next/image";
 import { site } from "@/lib/site";
 import CallButton from "@/components/CallButton";
 import ViberButton from "@/components/ViberButton";
@@ -33,14 +32,15 @@ export default function Hero() {
           </p>
         </div>
 
-        <Image
-          src="/images/storefront.webp"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/storefront-1600.webp"
+          srcSet="/images/storefront-640.webp 640w, /images/storefront-1024.webp 1024w, /images/storefront-1600.webp 1600w"
+          sizes="(min-width: 1024px) 50vw, 100vw"
           alt="Η πρόσοψη του καταστήματος Σαράντος Dry Clean στη Λεωνίδου 82, Σπάρτη"
           width={1600}
           height={1200}
-          preload
           fetchPriority="high"
-          sizes="(min-width: 1024px) 50vw, 100vw"
           className="h-auto w-full rounded-2xl shadow-lg"
         />
       </div>
