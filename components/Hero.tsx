@@ -39,6 +39,7 @@ export default function Hero() {
           width={1600}
           height={1200}
           preload
+          fetchPriority="high"
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="h-auto w-full rounded-2xl shadow-lg"
         />
