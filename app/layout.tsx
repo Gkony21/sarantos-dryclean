@@ -22,6 +22,17 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.title,
     description: site.description,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Η πρόσοψη του καταστήματος Σαράντος Dry Clean στη Σπάρτη",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 

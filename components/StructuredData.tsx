@@ -4,6 +4,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "DryCleaningOrLaundry",
   name: site.name,
+  image: `${site.url}/images/storefront.webp`,
   url: site.url,
   telephone: site.mobile.tel,
   email: site.email,
