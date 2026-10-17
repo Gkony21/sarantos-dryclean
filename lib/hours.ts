@@ -4,6 +4,17 @@ import { site } from "@/lib/site";
 const ON_DAY = ["την Κυριακή", "τη Δευτέρα", "την Τρίτη", "την Τετάρτη", "την Πέμπτη", "την Παρασκευή", "το Σάββατο"];
 const SCHEMA_DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+const DAY_NAMES = ["Κυριακή", "Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή", "Σάββατο"];
+
+/** Monday to Sunday, each day with its opening periods (none when closed). */
+export function weekSchedule() {
+  return [1, 2, 3, 4, 5, 6, 0].map((weekday) => ({
+    weekday,
+    name: DAY_NAMES[weekday],
+    periods: periodsOn(weekday),
+  }));
+}
+
 /** Opening hours in schema.org form, for Google. */
 export function openingHoursSpecification() {
   return site.hours.flatMap((row) =>
