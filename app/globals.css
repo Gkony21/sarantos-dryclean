@@ -12,3 +12,8 @@
 @theme inline {
   --font-sans: var(--font-commissioner);
 }
+
+/* Links to #sections stop below the sticky header instead of under it. */
+html {
+  scroll-padding-top: 5rem;
+}
