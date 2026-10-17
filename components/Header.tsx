@@ -1,14 +1,13 @@
-import Link from "next/link";
 import CallButton from "@/components/CallButton";
 import ViberButton from "@/components/ViberButton";
 import Image from "next/image";
+import HomeLink from "@/components/HomeLink";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-4">
-        <Link
-          href="/"
+        <HomeLink
           aria-label="Σαράντος Dry Clean, αρχική σελίδα"
           className="flex items-center gap-2 leading-tight"
         >
@@ -28,7 +27,7 @@ export default function Header() {
               Dry Clean
             </span>
           </span>
-        </Link>
+        </HomeLink>
 
         <div className="flex items-center gap-2">
           <ViberButton compact />
