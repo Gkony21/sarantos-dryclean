@@ -4,6 +4,7 @@ import Offer from "@/components/Offer";
 import Contact from "@/components/Contact";
 import StructuredData from "@/components/StructuredData";
 import Shop from "@/components/Shop";
+import Steps from "@/components/Steps";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <StructuredData />
       <Hero />
       <Services />
+      <Steps />
       <Shop />
       <Contact />
       <Offer />

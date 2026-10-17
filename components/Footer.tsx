@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-band text-white">
+    <footer className="bg-brand-forest text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
         <div>
           <p className="text-2xl font-extrabold">ΣΑΡΑΝΤΟΣ Dry Clean</p>
@@ -52,6 +52,16 @@ export default function Footer() {
                 className="hover:underline"
               >
                 Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.googleReviews}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Κριτικές Google
               </a>
             </li>
           </ul>

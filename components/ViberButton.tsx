@@ -19,8 +19,8 @@ export default function ViberButton({
       aria-label="Στείλτε μήνυμα στο Viber"
       className={`flex items-center justify-center gap-2 rounded-md border-2 border-brand-green bg-white font-bold text-brand-green ${buttonSizes[size]}`}
     >
-      <MessageCircle className="h-5 w-5 shrink-0" />
-      <span className={compact ? "hidden sm:inline" : ""}>{label}</span>
+      <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+      <span className={`whitespace-nowrap ${compact ? "hidden sm:inline" : ""}`}>{label}</span>
     </a>
   );
 }

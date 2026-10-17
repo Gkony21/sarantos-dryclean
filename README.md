@@ -28,6 +28,7 @@ components/     UI sections (Header, Hero, Services, Shop, Contact, Footer, ...)
 lib/
   site.ts       Business info: name, address, phones, hours, socials, offer
   services.ts   List of services shown on the page
+  hours.ts      Open-now status and structured-data hours, from site.ts
   ui.ts         Shared button sizes
 public/
   images/       Optimized WebP photos
@@ -53,7 +54,7 @@ Most changes need **no component edits**:
 | Add/remove/edit services                           | `lib/services.ts`                      |
 | Shop gallery photos                                | `components/Shop.tsx` → `photos` array |
 
-> ⚠️ When changing opening hours, also update `openingHoursSpecification` in `components/StructuredData.tsx` and the Google Business Profile.
+> ⚠️ Opening hours live only in `lib/site.ts` (`hours`): the page, the "open now" badge and the structured data all read them. When they change, also update the Google Business Profile.
 
 ### Adding photos
 
