@@ -45,6 +45,20 @@ export default function Contact() {
                   {site.email}
                 </a>
               </li>
+              <li className="flex items-center gap-3">
+                <Star
+                  className="h-5 w-5 shrink-0 text-brand-green"
+                  aria-hidden="true"
+                />
+                <a
+                  href={site.googleReviews}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-brand-green underline underline-offset-4"
+                >
+                  Αφήστε μας κριτική στη Google
+                </a>
+              </li>
               <li className="flex items-start gap-3">
                 <MapPin
                   className="mt-1 h-5 w-5 shrink-0 text-brand-green"
@@ -61,20 +75,6 @@ export default function Contact() {
                     Οδηγίες στον χάρτη
                   </a>
                 </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <Star
-                  className="h-5 w-5 shrink-0 text-brand-green"
-                  aria-hidden="true"
-                />
-                <a
-                  href={site.googleReviews}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold text-brand-green underline underline-offset-4"
-                >
-                  Αφήστε μας κριτική στη Google
-                </a>
               </li>
             </ul>
           </div>
