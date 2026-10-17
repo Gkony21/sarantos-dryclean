@@ -15,31 +15,13 @@ export default function Services() {
             return (
               <li
                 key={service.title}
-                className={`reveal rounded-xl border p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
-                  service.featured
-                    ? "border-brand-green bg-brand-green text-white"
-                    : "border-gray-200 bg-white"
-                }`}
+                className="reveal rounded-xl border border-gray-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <span
-                  className={`flex h-12 w-12 items-center justify-center rounded-full ${
-                    service.featured ? "bg-white/15" : "bg-brand-green/10"
-                  }`}
-                >
-                  <Icon
-                    className={`h-6 w-6 ${service.featured ? "text-white" : "text-brand-green"}`}
-                    aria-hidden="true"
-                  />
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-green/10">
+                  <Icon className="h-6 w-6 text-brand-green" aria-hidden="true" />
                 </span>
                 <h3 className="mt-4 text-xl font-bold">{service.title}</h3>
-                <p className={`mt-2 ${service.featured ? "text-white/90" : "text-brand-ink/80"}`}>
-                  {service.description}
-                </p>
-                {service.featured && (
-                  <p className="mt-4 text-sm font-bold tracking-wider uppercase text-white/80">
-                    Η βασική μας δουλειά
-                  </p>
-                )}
+                <p className="mt-2 text-brand-ink/80">{service.description}</p>
               </li>
             );
           })}
