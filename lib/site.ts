@@ -26,6 +26,7 @@ export const site = {
   viber: "viber://chat?number=%2B306932238223",
   facebook: "https://www.facebook.com/SARANTOSPSYHOGIOS",
   instagram: "https://www.instagram.com/sarantos13/",
+  googleReviews: "https://g.page/r/CR1lANgYa4FsEBM/review",
   offer: {
     active: false,
     title: "2 ρούχα + 1 δώρο",

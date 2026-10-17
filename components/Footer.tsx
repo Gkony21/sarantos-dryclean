@@ -54,6 +54,16 @@ export default function Footer() {
                 Instagram
               </a>
             </li>
+            <li>
+              <a
+                href={site.googleReviews}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Κριτικές Google
+              </a>
+            </li>
           </ul>
         </div>
       </div>
