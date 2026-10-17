@@ -16,7 +16,7 @@ export default function CallButton({
       href={`tel:${site.mobile.tel}`}
       className={`flex items-center justify-center gap-2 rounded-md bg-brand-green font-bold text-white ${buttonSizes[size]}`}
     >
-      <Phone className="h-5 w-5 shrink-0" />
+      <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />
       <span className="whitespace-nowrap">{label}</span>
     </a>
   );

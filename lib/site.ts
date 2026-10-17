@@ -14,11 +14,20 @@ export const site = {
   address,
   addressParts,
   mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`,
+  // The one place for opening hours: the page, the "open now" badge and Google's
+  // structured data all read from here. Weekdays: 0 = Sunday … 6 = Saturday.
   hours: [
-    { days: "Δευτέρα & Τετάρτη", time: "08:00–14:00" },
-    { days: "Τρίτη, Πέμπτη & Παρασκευή", time: "08:00–14:00 & 17:30–20:30" },
-    { days: "Σάββατο", time: "08:00–14:00" },
-    { days: "Κυριακή", time: "Κλειστά" },
+    { days: "Δευτέρα & Τετάρτη", weekdays: [1, 3], periods: [["08:00", "14:00"]] },
+    {
+      days: "Τρίτη, Πέμπτη & Παρασκευή",
+      weekdays: [2, 4, 5],
+      periods: [
+        ["08:00", "14:00"],
+        ["17:30", "20:30"],
+      ],
+    },
+    { days: "Σάββατο", weekdays: [6], periods: [["08:00", "14:00"]] },
+    { days: "Κυριακή", weekdays: [0], periods: [] },
   ],
   mobile: { display: "693 223 8223", tel: "+306932238223" },
   landline: { display: "27310 24408", tel: "+302731024408" },

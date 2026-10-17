@@ -1,3 +1,4 @@
+import { openingHoursSpecification } from "@/lib/hours";
 import { site } from "@/lib/site";
 
 const jsonLd = {
@@ -16,27 +17,7 @@ const jsonLd = {
     addressCountry: "GR",
   },
   areaServed: "Σπάρτη",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ],
-      opens: "08:00",
-      closes: "14:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Thursday", "Friday"],
-      opens: "17:30",
-      closes: "20:30",
-    },
-  ],
+  openingHoursSpecification: openingHoursSpecification(),
   sameAs: [site.facebook, site.instagram],
 };
 

@@ -15,6 +15,8 @@ export type Service = {
   title: string;
   description: string;
   icon: LucideIcon;
+  /** Shown highlighted, as the shop's main line of work. */
+  featured?: boolean;
 };
 
 export const services: Service[] = [
@@ -22,6 +24,7 @@ export const services: Service[] = [
     title: "Χαλιά & μοκέτες",
     description: "Καθαρισμός και συντήρηση χαλιών και μοκετών κάθε τύπου.",
     icon: Layers,
+    featured: true,
   },
   {
     title: "Επισκευή & φύλαξη χαλιών",
