@@ -21,7 +21,7 @@ export default function Hero() {
               Καθαρισμός χαλιών, ρούχων και σαλονιών στη Σπάρτη
             </h1>
             <p className="hero-in max-w-[34ch] text-lg text-brand-moss [--delay:100ms] sm:text-xl">
-              Τα παραλαμβάνουμε από τον χώρο σας και τα φέρνουμε πίσω καθαρά.
+              Τα φροντίζουμε με προσοχή, σαν να ήταν δικά μας.
             </p>
           </div>
           <div className="hero-in flex flex-col gap-3 [--delay:200ms] sm:flex-row">
@@ -74,7 +74,7 @@ export default function Hero() {
               &amp; παράδοση
             </p>
             <p className="max-w-[28ch] text-brand-fern">
-              Σε Σπάρτη και γύρω χωριά. Ερχόμαστε στον χώρο σας και σας τα φέρνουμε πίσω καθαρά.
+              Σε Σπάρτη και γύρω χωριά. Ερχόμαστε εμείς στον χώρο σας.
             </p>
           </div>
           {/* From the customer's door to the shop and back. */}

@@ -6,7 +6,7 @@ export default function Services() {
   return (
     <section id="ypiresies" className="mx-auto max-w-6xl px-4 pt-24">
       <SectionHeading eyebrow="Τι κάνουμε" title="Οι υπηρεσίες μας" split>
-        Όλες με δωρεάν παραλαβή και παράδοση σε Σπάρτη και γύρω χωριά.
+        Για το σπίτι, τα ρούχα και το αυτοκίνητο.
       </SectionHeading>
 
       {/* Three per row on wide screens, two on tablets, one on phones; a card left alone on
