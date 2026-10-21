@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import CurrentYear from "@/components/CurrentYear";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="bg-brand-forest text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
@@ -70,7 +69,7 @@ export default function Footer() {
 
       <div className="border-t border-white/20">
         <p className="mx-auto max-w-6xl px-4 py-4 text-sm text-white/90">
-          © {year} {site.name}
+          © <CurrentYear /> {site.name}
         </p>
       </div>
     </footer>
