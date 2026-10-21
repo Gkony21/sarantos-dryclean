@@ -22,7 +22,7 @@ export default function Hours() {
 
       <table className="mt-4 w-full border-collapse text-[13px] tabular-nums min-[360px]:text-[15px] sm:text-base">
         <thead>
-          <tr className="text-left text-sm text-brand-ink/60">
+          <tr className="text-left text-sm text-brand-ink/70">
             <th className="pb-2 font-normal">
               <span className="sr-only">Ημέρα</span>
             </th>
@@ -47,11 +47,11 @@ export default function Hours() {
                   <>
                     <td className="py-2 pr-1.5 whitespace-nowrap min-[360px]:pr-2">{`${morning[0]}–${morning[1]}`}</td>
                     <td className="rounded-r-lg py-2 pr-1.5 whitespace-nowrap min-[360px]:pr-2">
-                      {afternoon ? `${afternoon[0]}–${afternoon[1]}` : <span className="text-brand-ink/40">—</span>}
+                      {afternoon ? `${afternoon[0]}–${afternoon[1]}` : <span className="text-brand-ink/70">—</span>}
                     </td>
                   </>
                 ) : (
-                  <td colSpan={2} className="rounded-r-lg py-2 pr-2 text-brand-ink/60">
+                  <td colSpan={2} className="rounded-r-lg py-2 pr-2 text-brand-ink/70">
                     Κλειστά
                   </td>
                 )}
