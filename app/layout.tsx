@@ -41,7 +41,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="el" className={commissioner.variable}>
-      <body className="bg-white font-sans text-brand-ink antialiased">
+      <body className="bg-brand-mist font-sans text-brand-ink antialiased">
         <Header />
         {children}
         <Footer />

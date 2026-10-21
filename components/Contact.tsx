@@ -1,88 +1,84 @@
-import { Mail, MapPin, Phone, Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import { site } from "@/lib/site";
-import CallButton from "@/components/CallButton";
-import ViberButton from "@/components/ViberButton";
-import Hours from "@/components/Hours";
+import { lift } from "@/lib/ui";
 import SectionHeading from "@/components/SectionHeading";
+import Hours from "@/components/Hours";
+import Bubbles from "@/components/Bubbles";
+import Drop from "@/components/Drop";
 
 export default function Contact() {
   return (
-    <section id="epikoinonia" className="bg-brand-cream">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
-        <SectionHeading eyebrow="Είμαστε εδώ" title="Επικοινωνία">
-          Καλέστε μας ή στείλτε μήνυμα για να κλείσετε δωρεάν παραλαβή.
-        </SectionHeading>
+    <section id="epikoinonia" className="mx-auto max-w-6xl px-4 pt-24">
+      <SectionHeading eyebrow="Είμαστε εδώ" title="Επικοινωνία" />
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-2">
-          <div className="reveal flex flex-col gap-6">
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <CallButton size="lg" label={`Κινητό: ${site.mobile.display}`} />
-              <ViberButton size="lg" label="Viber" />
-            </div>
-
-            <ul className="flex flex-col gap-4 text-lg">
-              <li className="flex items-center gap-3">
-                <Phone
-                  className="h-5 w-5 shrink-0 text-brand-green"
-                  aria-hidden="true"
-                />
-                <a
-                  href={`tel:${site.landline.tel}`}
-                  className="underline underline-offset-4"
-                >
-                  Σταθερό: {site.landline.display}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail
-                  className="h-5 w-5 shrink-0 text-brand-green"
-                  aria-hidden="true"
-                />
-                <a
-                  href={`mailto:${site.email}`}
-                  className="break-all underline underline-offset-4"
-                >
-                  {site.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Star
-                  className="h-5 w-5 shrink-0 text-brand-green"
-                  aria-hidden="true"
-                />
-                <a
-                  href={site.googleReviews}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold text-brand-green underline underline-offset-4"
-                >
-                  Αφήστε μας κριτική στη Google
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin
-                  className="mt-1 h-5 w-5 shrink-0 text-brand-green"
-                  aria-hidden="true"
-                />
-                <div>
-                  <p>{site.address}</p>
-                  <a
-                    href={site.mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold text-brand-green underline underline-offset-4"
-                  >
-                    Οδηγίες στον χάρτη
-                  </a>
-                </div>
-              </li>
-            </ul>
+      <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="reveal relative flex flex-col justify-between gap-8 overflow-hidden rounded-[28px] bg-brand-forest p-8 text-white sm:col-span-2 sm:p-9 lg:col-span-5 lg:row-span-2">
+          <Drop className="pointer-events-none absolute -right-10 -bottom-[70px] h-[330px] w-[260px] rotate-[18deg] text-brand-sprout/10" />
+          <Bubbles
+            bubbles={[
+              { x: "86%", bottom: 20, size: 28, delay: 0.8 },
+              { x: "70%", bottom: 0, size: 14, delay: 3.6 },
+              { x: "56%", bottom: 30, size: 20, delay: 6.2, duration: 11 },
+              { x: "92%", bottom: 90, size: 12, delay: 2 },
+              { x: "8%", bottom: 0, size: 18, delay: 4.8 },
+            ]}
+          />
+          <div className="relative">
+            <p className="font-bold text-brand-sprout">Κλείστε δωρεάν παραλαβή</p>
+            <a
+              href={`tel:${site.mobile.tel}`}
+              className="mt-2.5 block text-[40px] leading-none font-extrabold tracking-[-0.02em] sm:text-[52px]"
+            >
+              {site.mobile.display}
+            </a>
+            <p className="mt-3.5 text-white/80">
+              Σταθερό:{" "}
+              <a href={`tel:${site.landline.tel}`} className="text-white underline underline-offset-4">
+                {site.landline.display}
+              </a>
+            </p>
           </div>
-
-          <div className="reveal">
-            <Hours />
+          <div className="relative flex flex-wrap gap-3">
+            <a
+              href={`tel:${site.mobile.tel}`}
+              className="rounded-full bg-brand-sprout px-6 py-4 font-extrabold text-brand-forest transition-colors hover:bg-white"
+            >
+              Καλέστε τώρα
+            </a>
+            <a href={site.viber} className="rounded-full bg-white/12 px-6 py-4 font-bold text-white transition-colors hover:bg-white/20">
+              Μήνυμα στο Viber
+            </a>
           </div>
         </div>
+
+        <div className="reveal sm:col-span-2 lg:col-span-4 lg:row-span-2">
+          <Hours />
+        </div>
+
+        <a
+          href={site.googleReviews}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`reveal flex min-h-[180px] flex-col justify-between gap-4 rounded-[28px] bg-brand-leaf p-7 lg:col-span-3 ${lift}`}
+        >
+          <Star className="h-8 w-8 text-brand-forest" aria-hidden="true" />
+          <span className="text-xl leading-tight font-extrabold">Αφήστε μας κριτική στη Google →</span>
+        </a>
+
+        <a
+          href={site.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`reveal flex min-h-[180px] flex-col justify-between gap-4 rounded-[28px] bg-white p-7 lg:col-span-3 ${lift}`}
+        >
+          <MapPin className="h-8 w-8 text-brand-green" aria-hidden="true" />
+          <span>
+            <span className="block text-xl font-extrabold">{site.addressParts.street}</span>
+            <span className="block text-brand-moss">
+              {site.addressParts.city} {site.addressParts.postalCode} · Οδηγίες →
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );

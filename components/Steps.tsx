@@ -1,58 +1,66 @@
-import { Phone, Sparkles, Truck } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import Bubbles from "@/components/Bubbles";
 
 const steps = [
   {
     title: "Καλέστε μας",
     text: "Τηλεφωνήστε ή στείλτε μήνυμα στο Viber για να κλείσουμε μέρα παραλαβής.",
-    icon: Phone,
   },
   {
     title: "Ερχόμαστε να το πάρουμε",
     text: "Παραλαμβάνουμε δωρεάν από τον χώρο σας, σε Σπάρτη και γύρω χωριά.",
-    icon: Truck,
   },
   {
     title: "Σας το φέρνουμε καθαρό",
     text: "Το παραδίδουμε καθαρό και φρεσκαρισμένο, πάλι δωρεάν.",
-    icon: Sparkles,
   },
 ];
 
 export default function Steps() {
   return (
-    <section id="pos-doulevoume" className="bg-brand-cream">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
-        <SectionHeading eyebrow="Απλά και γρήγορα" title="Πώς δουλεύουμε">
-          Τρία βήματα, χωρίς να βγείτε από το σπίτι.
-        </SectionHeading>
+    <section id="pos-doulevoume" className="mx-auto max-w-6xl px-4 pt-24">
+      <div className="relative overflow-hidden rounded-[28px] bg-brand-forest p-7 text-white sm:p-12">
+        <Bubbles
+          bubbles={[
+            { x: "4%", bottom: 20, size: 26, delay: 0 },
+            { x: "15%", bottom: 0, size: 14, delay: 2.4 },
+            { x: "31%", bottom: 40, size: 36, delay: 4.2, duration: 12 },
+            { x: "48%", bottom: 0, size: 16, delay: 1.1 },
+            { x: "63%", bottom: 24, size: 22, delay: 6 },
+            { x: "78%", bottom: 8, size: 32, delay: 3.3, duration: 11 },
+            { x: "92%", bottom: 36, size: 14, delay: 5.1 },
+          ]}
+        />
+        <div className="relative">
+          <SectionHeading eyebrow="Απλά και γρήγορα" title="Πώς δουλεύουμε" dark />
 
-        <div className="relative mt-10">
-          {/* On wide screens a dashed line joins the step numbers, read left to right. */}
-          <div
-            className="absolute top-11 right-12 left-12 hidden border-t-2 border-dashed border-brand-green/40 sm:block"
-            aria-hidden="true"
-          />
-          <ol className="grid gap-4 sm:grid-cols-3 sm:gap-8">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <li key={step.title} className="reveal relative rounded-xl bg-white p-6">
-                  <div className="flex items-center gap-3">
+          <div className="relative mt-10">
+            {/* Wide screens: one dashed line from step 1 to step 3. Phones: a line between each step. */}
+            <div
+              aria-hidden="true"
+              className="absolute top-[27px] right-[calc((100%-4rem)/3-28px)] left-7 hidden border-t-[2.5px] border-dashed border-brand-sprout/60 sm:block"
+            />
+            <ol className="relative grid gap-7 sm:grid-cols-3 sm:gap-8">
+              {steps.map((step, index) => (
+                <li key={step.title} className="relative grid grid-cols-[56px_minmax(0,1fr)] gap-x-4 sm:block">
+                  {index < steps.length - 1 && (
                     <span
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-green text-lg font-extrabold text-white"
                       aria-hidden="true"
-                    >
-                      {index + 1}
-                    </span>
-                    <Icon className="h-7 w-7 text-brand-green" aria-hidden="true" />
-                  </div>
-                  <h3 className="mt-4 text-xl font-bold">{step.title}</h3>
-                  <p className="mt-2 text-brand-ink/80">{step.text}</p>
+                      className="absolute top-14 -bottom-7 left-[27px] border-l-[2.5px] border-dashed border-brand-sprout/60 sm:hidden"
+                    />
+                  )}
+                  <span
+                    aria-hidden="true"
+                    className="relative flex h-14 w-14 items-center justify-center rounded-full bg-brand-sprout text-[22px] font-extrabold text-brand-forest"
+                  >
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-3 mb-1 text-[22px] font-extrabold sm:mt-5 sm:mb-1.5">{step.title}</h3>
+                  <p className="col-start-2 text-white/80">{step.text}</p>
                 </li>
-              );
-            })}
-          </ol>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>
