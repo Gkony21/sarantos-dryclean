@@ -5,6 +5,7 @@ const ON_DAY = ["την Κυριακή", "τη Δευτέρα", "την Τρίτ
 const SCHEMA_DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const DAY_NAMES = ["Κυριακή", "Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή", "Σάββατο"];
+const DAY_SHORT = ["Κυ", "Δε", "Τρ", "Τε", "Πε", "Πα", "Σα"];
 
 /** Monday to Sunday, each day with its opening periods (none when closed). */
 export function weekSchedule() {
@@ -13,6 +14,24 @@ export function weekSchedule() {
     name: DAY_NAMES[weekday],
     periods: periodsOn(weekday),
   }));
+}
+
+export type DayKind = "morning" | "afternoon" | "both" | "closed";
+
+export const DAY_KIND_LABELS: Record<DayKind, string> = {
+  morning: "πρωί",
+  afternoon: "απόγευμα",
+  both: "πρωί & απόγευμα",
+  closed: "κλειστά",
+};
+
+/** Monday to Sunday at a glance: short name and whether the shop opens morning, afternoon or both. */
+export function weekOverview() {
+  return weekSchedule().map(({ weekday, name, periods }) => {
+    const kind: DayKind =
+      periods.length === 0 ? "closed" : periods.length > 1 ? "both" : periods[0][0] < "12:00" ? "morning" : "afternoon";
+    return { weekday, name, short: DAY_SHORT[weekday], kind };
+  });
 }
 
 /** Opening hours in schema.org form, for Google. */
@@ -45,25 +64,32 @@ function periodsOn(weekday: number) {
   return site.hours.find((row) => (row.weekdays as readonly number[]).includes(weekday))?.periods ?? [];
 }
 
-export type OpenStatus = { open: boolean; text: string };
+export type OpenStatus = { open: boolean; label: string; detail: string };
 
-/** "Ανοιχτά τώρα · κλείνει στις 14:00" or "Κλειστά · ανοίγει αύριο στις 08:00". */
+/**
+ * Whether the shop is open right now, in two parts so it can be shown on one line
+ * ("Ανοιχτά τώρα · κλείνει στις 14:00") or as a title with a line under it.
+ */
 export function openStatus(weekday: number, time: string): OpenStatus {
   const today = periodsOn(weekday);
 
   const current = today.find(([opens, closes]) => opens <= time && time < closes);
-  if (current) return { open: true, text: `Ανοιχτά τώρα · κλείνει στις ${current[1]}` };
+  if (current) {
+    const reopens = today.find(([opens]) => opens > current[1]);
+    const detail = `κλείνει στις ${current[1]}` + (reopens ? ` · ανοίγει ξανά ${reopens[0]}` : "");
+    return { open: true, label: "Ανοιχτά τώρα", detail };
+  }
 
   const laterToday = today.find(([opens]) => time < opens);
-  if (laterToday) return { open: false, text: `Κλειστά · ανοίγει στις ${laterToday[0]}` };
+  if (laterToday) return { open: false, label: "Κλειστά", detail: `ανοίγει στις ${laterToday[0]}` };
 
   for (let ahead = 1; ahead <= 7; ahead++) {
     const day = (weekday + ahead) % 7;
     const [first] = periodsOn(day);
     if (first) {
       const when = ahead === 1 ? "αύριο" : ON_DAY[day];
-      return { open: false, text: `Κλειστά · ανοίγει ${when} στις ${first[0]}` };
+      return { open: false, label: "Κλειστά", detail: `ανοίγει ${when} στις ${first[0]}` };
     }
   }
-  return { open: false, text: "Κλειστά" };
+  return { open: false, label: "Κλειστά", detail: "" };
 }

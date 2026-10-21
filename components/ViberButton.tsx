@@ -5,22 +5,17 @@ import { buttonSizes } from "@/lib/ui";
 type Props = {
   size?: keyof typeof buttonSizes;
   label?: string;
-  compact?: boolean;
 };
 
-export default function ViberButton({
-  size = "sm",
-  label = "Viber",
-  compact = false,
-}: Props) {
+export default function ViberButton({ size = "sm", label = "Viber" }: Props) {
   return (
     <a
       href={site.viber}
       aria-label="Στείλτε μήνυμα στο Viber"
-      className={`flex items-center justify-center gap-2 rounded-md border-2 border-brand-green bg-white font-bold text-brand-green ${buttonSizes[size]}`}
+      className={`flex items-center justify-center gap-2 rounded-full bg-brand-mist font-bold text-brand-ink transition-colors hover:bg-brand-mint ${buttonSizes[size]}`}
     >
       <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-      <span className={`whitespace-nowrap ${compact ? "hidden sm:inline" : ""}`}>{label}</span>
+      <span className="whitespace-nowrap">{label}</span>
     </a>
   );
 }

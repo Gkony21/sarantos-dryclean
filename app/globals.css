@@ -1,21 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-lime: #8cc63f;
   --color-brand-green: #2e7d32;
+  /* A shade darker, for small green text on the light page background (contrast 4.5:1+). */
+  --color-brand-pine: #276a2b;
   --color-brand-blue: #1f6fb2;
   --color-brand-forest: #1f4d2b;
-  --color-brand-cream: #f7f4e6;
-  --color-brand-ink: #1b2a1f;
+  --color-brand-ink: #16261b;
+  /* Muted body text, and text on the light-green tiles. */
+  --color-brand-moss: #3d4f42;
+  --color-brand-fern: #2f4a35;
+  /* Page background, icon circles, light-green tiles, light green on dark green. */
+  --color-brand-mist: #eef1ea;
+  --color-brand-mint: #eaf4dd;
+  --color-brand-leaf: #d9eebf;
+  --color-brand-sprout: #b9e08a;
 }
 
 @theme inline {
   --font-sans: var(--font-commissioner);
 }
 
-/* Links to #sections stop below the sticky header instead of under it. */
+/* Links to #sections stop below the floating header instead of under it. */
 html {
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6rem;
 }
 
 /*
@@ -24,6 +32,9 @@ html {
  *   (set --delay per line). The title and photo are left still so the page shows instantly.
  * - .reveal: sections and cards rise softly into view while scrolling. Pure CSS, tied to the
  *   scroll position; browsers without scroll-driven animations simply show everything.
+ * - .bubble: soap bubbles drifting up inside the dark green tiles (see Bubbles.tsx).
+ * - .van: the van driving to the shop and back on the free pickup tile (needs --road).
+ * - .dot-pulse: the soft ring around the "open now" dot.
  */
 @keyframes rise-in {
   from {
@@ -32,9 +43,74 @@ html {
   }
 }
 
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-240px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes drive {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  45%,
+  55% {
+    transform: translateX(var(--road));
+  }
+}
+
+@keyframes dot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(46 125 50 / 0.45);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 10px rgb(46 125 50 / 0);
+  }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgb(214 240 184 / 0.5);
+  opacity: 0;
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  width: 22%;
+  height: 22%;
+  left: 22%;
+  top: 18%;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.55);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-in {
     animation: rise-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms) both;
+  }
+
+  .bubble {
+    animation: bubble-rise var(--duration, 9s) linear var(--delay, 0s) infinite;
+  }
+
+  .van {
+    animation: drive 7s ease-in-out infinite;
+  }
+
+  .dot-pulse {
+    animation: dot-pulse 2s infinite;
   }
 
   @supports (animation-timeline: view()) {
