@@ -34,14 +34,14 @@ export default function Hero() {
           <figure className="group relative aspect-[4/3] overflow-hidden rounded-[28px] lg:aspect-auto lg:min-h-[300px] lg:flex-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/storefront-1600.webp"
-              srcSet="/images/storefront-640.webp 640w, /images/storefront-1024.webp 1024w, /images/storefront-1600.webp 1600w"
+              src="/images/storefront-front-1448.webp"
+              srcSet="/images/storefront-front-640.webp 640w, /images/storefront-front-1024.webp 1024w, /images/storefront-front-1448.webp 1448w"
               sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Η πρόσοψη του καταστήματος Σαράντος Dry Clean στη Λεωνίδου 82, Σπάρτη"
-              width={1600}
-              height={1200}
+              width={1448}
+              height={1086}
               fetchPriority="high"
-              className="absolute inset-0 h-full w-full object-cover object-[55%_55%] transition duration-[900ms] ease-out group-hover:scale-105 motion-reduce:transition-none"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_30%] transition duration-[900ms] ease-out group-hover:scale-105 motion-reduce:transition-none"
             />
             <figcaption className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-sm font-bold">
               <MapPin className="h-4 w-4 text-brand-green" aria-hidden="true" />

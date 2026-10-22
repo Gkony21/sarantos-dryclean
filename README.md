@@ -58,7 +58,7 @@ Most changes need **no component edits**:
 
 ### Adding photos
 
-1. Crop and resize (gallery: 800×1000, hero: 640 / 1024 / 1600 wide).
+1. Crop and resize (gallery: 800×1000, hero: 640 / 1024 / 1448 wide).
 2. Export as WebP (quality ~70) and keep each file under ~150 KB.
 3. Place in `public/images/` and reference it in the component.
 4. Never commit original camera photos.

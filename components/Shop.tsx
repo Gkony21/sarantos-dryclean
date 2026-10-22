@@ -24,8 +24,8 @@ const photos: Photo[] = [
     imageClassName: "origin-right object-[100%_50%] scale-125 group-hover:scale-[1.31]",
   },
   {
-    src: "/images/facade.webp",
-    alt: "Η βιτρίνα του καταστήματος στη Λεωνίδου 82",
+    src: "/images/shop-entrance.webp",
+    alt: "Η είσοδος του καταστήματος στη Λεωνίδου 82, με την ταμπέλα Dry Clean Σαράντος",
     caption: "Στο κέντρο της Σπάρτης",
     className: "min-h-[420px] lg:col-span-4 lg:row-span-2 lg:min-h-[520px]",
     imageClassName: "group-hover:scale-105",
