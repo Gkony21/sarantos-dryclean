@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MessageCircle, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import HomeLink from "@/components/HomeLink";
+import HideOnScroll from "@/components/HideOnScroll";
 
 const links = [
   { href: "/#ypiresies", label: "Υπηρεσίες" },
@@ -11,13 +12,13 @@ const links = [
 ];
 
 /**
- * A white bar floating at the top while scrolling. On phones the links give way to two round
+ * A frosted-glass bar floating at the top: it hides while scrolling down and returns on scroll up. On phones the links give way to two round
  * buttons (Viber, call), so the bar always stays one line.
  */
 export default function Header() {
   return (
-    <header className="sticky top-3 z-50 mx-auto mt-3 w-full max-w-6xl px-4">
-      <div className="flex items-center justify-between gap-3 rounded-full bg-white py-2 pr-2 pl-4 shadow-[0_6px_24px_rgb(22_38_27/0.10)]">
+    <HideOnScroll className="sticky top-3 z-50 mx-auto mt-3 w-full max-w-6xl px-4">
+      <div className="flex items-center justify-between gap-3 rounded-full bg-white/80 py-2 pr-2 pl-4 shadow-[0_6px_24px_rgb(22_38_27/0.10)] ring-1 ring-white/70 backdrop-blur-md backdrop-saturate-150">
         <HomeLink aria-label="Σαράντος Dry Clean, αρχική σελίδα" className="flex min-w-0 items-center gap-2.5 leading-tight">
           <Image src="/logo.svg" alt="" width={36} height={36} loading="eager" className="h-9 w-9 shrink-0" />
           <span>
@@ -61,6 +62,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </HideOnScroll>
   );
 }
